@@ -4,10 +4,10 @@ import './Footer.css'
 
 const Footer = () => {
   return (
-    <footer className=" mt-5 bg-secondary px-5">
+    <footer className=" mt-5 bg-secondary px-5 container-fluid mx-auto">
       <div className="margin d-lg-flex justify-content-between my-auto align-items-center">
         {/* contact information */}
-        <div>
+        <div className="w-75 ">
           <h2>Contact Us</h2>
           <ul>
             <li className="text-white">

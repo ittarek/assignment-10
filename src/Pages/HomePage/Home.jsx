@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Button, Container } from "react-bootstrap";
 import './Home.css'
 import Chef from "../ChefPage/Chef";
+import Branch from "../OureBrangPage/Branch";
+import TodayMenu from "../TodayMenuePage/TodayMenu";
 
 const Home = () => {
 const [chefData, setChefData] = useState([]);
@@ -9,13 +11,13 @@ const [showAll, setShowAll] = useState(false);
 
 console.log(chefData);
 useEffect(()=>{
-  fetch('Chef.json')
+  fetch('http://localhost:5000/chefData')
   .then(res => res.json())
   .then(data => setChefData(data))
 },[])
 
   return (<div>
-    <Container fluid className="image bg-opacity-100">
+    <Container fluid className="image bg-opacity-25">
          
       {/*banner text  */}
       <div className="w-50 position-absolute margin text-white d-flex justify-content-center align-items-center flex-column ">
@@ -34,7 +36,7 @@ useEffect(()=>{
 
     
     </Container>  <Container fluid className=" ps-5 ">
-    <h1 className="text-canter m-auto w-50 mt-5 text-info">Welcome To Chef</h1>
+    <h1 className="text-canter p-2 shadow-lg rounded-2  mt-5 chef-color">Welcome To Chef</h1>
        
      <div className="row">
      {
@@ -43,12 +45,26 @@ useEffect(()=>{
      </div>
      <Button 
           onClick={() => setShowAll(true)}
-          className="see-all-button  text-white  "
+          className="see-all-button  text-white mt-5 mb-5"
         >
           See All Chef
 
         </Button>
-      </Container></div>
+      </Container>
+      
+      
+      <Container fluid className="branch-image">
+        <Branch></Branch>
+      </Container>
+
+      <Container fluid className="mt-5 mb-5">
+        <TodayMenu></TodayMenu>
+      </Container>
+      
+      
+      
+      
+      </div>
   );
 };
 

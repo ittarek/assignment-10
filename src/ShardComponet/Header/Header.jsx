@@ -62,26 +62,26 @@ const Header = () => {
         <Navbar.Toggle aria-controls="navbarScroll" className=" bg-info  " />
         <Navbar.Collapse>
           <Nav
-            className="d-flex align-items-center justify-content-between"
+            className="d-flex align-items-center justify-content-between "
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <NavLink style={navLinkStyle} to="/">
+            <NavLink className="text-decoration-none" style={navLinkStyle} to="/">
               {" "}
               Home
             </NavLink>
 
-            <NavLink to="/destination" style={navLinkStyle} className="mx-2">
+            <NavLink  to="/destination" style={navLinkStyle} className="mx-2 text-decoration-none">
               {" "}
               Destination
             </NavLink>
 
-            <NavLink style={navLinkStyle} to="/blog">
+            <NavLink className="text-decoration-none" style={navLinkStyle} to="/blog">
               {" "}
               Blog
             </NavLink>
 
-            <NavLink to="/contact" style={navLinkStyle} className="mx-2">
+            <NavLink  to="/contact" style={navLinkStyle} className="mx-2 text-decoration-none">
               {" "}
               Contact
             </NavLink>
