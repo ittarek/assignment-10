@@ -1,0 +1,31 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.image {
+  height: 100vh;
+  /* background-color: hsla(0, 0%, 0%, 0.6); */
+  background-image: url(https://duruthemes.com/demo/html/winta/multipage-light/img/about1.jpg);
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.margin {
+  margin-top: 200px;
+  margin-left: 250px;
+}
+.see-all-button {
+          margin-left: 450px;
+          margin-top: 25px;
+}
+
+@media screen and (max-width:576px) {
+          .see-all-button {
+                    margin-top: 20px !important;
+                  
+                    margin-left: 100px;
+          }
+          
+}
