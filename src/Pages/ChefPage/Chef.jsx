@@ -25,17 +25,17 @@ const Chef = ({ data }) => {
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+           
           </Card.Text>
         </Card.Body>
         <ListGroup className="list-group-flush">
           <ListGroup.Item>Number Of recipes :{number_of_recipes}</ListGroup.Item>
           <ListGroup.Item>Experience:{years_of_experience}</ListGroup.Item>
-          <ListGroup.Item>{number_of_recipe_likes}</ListGroup.Item>
+          <ListGroup.Item>{number_of_recipe_likes} : Like </ListGroup.Item>
         </ListGroup>
         <Card.Body>
-          <Link to='/chefDetails'><Button>View Recipes</Button></Link>
+          <Link  to={`/chefDetails/${id}`}><Button>View Recipes</Button></Link>
+          {/* <Link  to='/chefDetails'><Button>View Recipes</Button></Link> */}
        
         </Card.Body>
       </Card>

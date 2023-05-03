@@ -1,11 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import { useLoaderData, useParams } from "react-router-dom";
+import SingleChefDetails from "../SingleChefDetails/SingleChefDetails";
+import { Container } from "react-bootstrap";
+import ChefBanner from "../ChefBanner/ChefBanner";
 
 const ChefDetails = () => {
-          return (
-                    <div>
-                              <h1>Chef details</h1>
-                    </div>
-          );
+  const details = useLoaderData();
+  console.log(details);
+  const {_id}= useParams()
+
+  return (
+  <>
+      <Container fluid className="d-flex mx-auto w-75 flex-column-reverse shadow-sm mb-5 mt-5">
+        {details.slice(0, 1).map((chef) => (
+          <ChefBanner key={chef.id} chef={chef}></ChefBanner>
+        ))}
+      </Container>
+  <Container>
+      <div className="row">
+        {details.map((data) => (
+          <SingleChefDetails key={_id} data={data}></SingleChefDetails>
+        ))}
+      </div>
+    </Container></>
+  );
 };
 
 export default ChefDetails;

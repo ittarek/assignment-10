@@ -4,9 +4,10 @@ import ShowMenu from "./ShowMenu";
 
 const TodayMenu = () => {
   const [menuData, setMenuData] = useState([]);
+  // console.log("menu",menuData);
 
   useEffect(() => {
-    fetch("http://localhost:5000/todayMenu")
+    fetch("https://b7-a10-chef-recipe-hunter-server-side-ittarek.vercel.app/todayMenu")
       .then(res=>res.json())
       .then(data =>setMenuData(data))
   }, []);

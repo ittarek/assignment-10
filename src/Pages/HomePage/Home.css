@@ -11,10 +11,14 @@
   background-size: cover;
   background-position: center;
 }
-
+.title{
+  color: cadetblue;
+}
 .margin {
   margin-top: 200px;
   margin-left: 250px;
+  margin-top:5px;
+  padding-top: 10px;
 }
 .see-all-button {
   margin-left: 490px;

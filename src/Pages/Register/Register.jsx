@@ -8,15 +8,17 @@ import { FaCross } from "react-icons/fa";
 
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser,updateUser } = useContext(AuthContext);
   const [error, setError] = useState("");
+  const [photo ,setPhoto] = useState(null)
+  console.log("register page",photo);
 
   //   register function
   const handleRegister = (event) => {
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
-    const photoUrl = form.photoUrl.value;
+    const photoURL = form.photoURL.value;
     const email = form.email.value;
     const password = form.password.value;
     form.reset();
@@ -34,6 +36,16 @@ const Register = () => {
       .catch((error) => {
         console.log(error.message);
       });
+
+      updateUser(photoURL)
+      .then(result =>{
+        const  photo = result.photoURL
+        console.log(photo);
+        setPhoto(photo)
+      })
+      .catch(error=>{
+        console.log(error.message);
+      })
   };
   return (
     <div className="register mx-auto">
@@ -56,7 +68,7 @@ const Register = () => {
             <span className="icon">
               <ion-icon name="photoUrl"></ion-icon>
             </span>
-            <input type="photoUrl" name="photoUrl" id="" required />
+            <input type="photoUrl" name="photoURL" id="" required />
             <label for="photoUrl">Photo URL</label>
           </div>
           <div className="input-box">

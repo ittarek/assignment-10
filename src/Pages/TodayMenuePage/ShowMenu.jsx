@@ -21,7 +21,7 @@ const ShowMenu = ({ data }) => {
       
         </ListGroup>
         <Card.Body>
-         <p>Price : {price}</p>
+         <p>Price : {price} $</p>
           <p>Calories : {calories}</p>
         </Card.Body>
       </Card>

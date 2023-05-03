@@ -8,6 +8,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import app from "./../firebase/firebase.config";
 import { FaUserAlt } from "react-icons/fa";
@@ -20,10 +21,10 @@ const gitHubProvider = new GithubAuthProvider();
 
 export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
-    
-
   const [user, setUser] = useState(null);
   const [loader, setLoader] = useState(true);
+  const [photoUrl, setPhotoUrl] = useState(null);
+  // console.log("photo", photoUrl);
 
   //   register provider
   const createUser = (email, password) => {
@@ -56,6 +57,7 @@ const AuthProvider = ({ children }) => {
     setLoader(true);
     signOut(auth);
   };
+
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (loggedUser) => {
       console.log("logged isn user inside auth state ", loggedUser);
@@ -67,6 +69,25 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
 
+  // update profile
+  // useEffect(() => {
+  //   const updateUser = updateProfile(auth, (currentUser) => {
+  //     console.log("logged isn user inside auth state ", currentUser);
+  //     setPhotoUrl(currentUser);
+  //     setLoader(false);
+  //   });
+  //   // return () => {
+  //   //   updateUser();
+  //   // };
+  // }, []);
+  const updateUser = () => {
+    return updateProfile(auth, (loggedUser) => {
+      displayName: "Jane Q. User"
+       photoURL: "https://example.com/jane-q-user/profile.jpg"
+
+    });
+  };
+
   const authInfo = {
     user,
     createUser,
@@ -75,7 +96,8 @@ const AuthProvider = ({ children }) => {
     googleLogin,
     githubLogin,
     loader,
-   
+    photoUrl,
+    updateUser,
   };
 
   return (
