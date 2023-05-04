@@ -8,10 +8,10 @@ const Main = () => {
           return (
                     <>
 
-                <Header></Header>
-                <div className='min-vh-100'><Outlet></Outlet> </div>
+<Header></Header>
+<div className='min-vh-100'><Outlet></Outlet> </div>
+                <Footer></Footer>
                     
-                    <Footer></Footer>
                              
                     </>
           );

@@ -17,11 +17,11 @@ const Chef = ({ data }) => {
 
   return (
       
-    <div className="mt-5 col-lg  gap-5">
+    <div className="mt-5 col-lg-4  ">
 
         
-      <Card style={{ width: "18rem" }} className="shadow">
-        <Card.Img className="img-fluid w-100 img-height" variant="top" src={picture} />
+      <Card style={{ width: "18rem" }} className="shadow w-100 ">
+        <Card.Img className="img-fluid w-100  img-height" variant="top" src={picture} />
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Text>

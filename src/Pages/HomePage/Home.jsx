@@ -10,19 +10,20 @@ const [chefData, setChefData] = useState([]);
 const [showAll, setShowAll] = useState(false);
 
 // console.log(chefData);
+
 useEffect(()=>{
   fetch('https://b7-a10-chef-recipe-hunter-server-side-ittarek.vercel.app/chefData')
   .then(res => res.json())
   .then(data => setChefData(data))
 },[])
 
-  return (<div>
-    <Container fluid className="image bg-opacity-25">
+  return (<div className=" ">
+    <Container fluid className="image">
          
       {/*banner text  */}
-      <div className="w-50  position-absolute margin text-white d-flex justify-content-center align-items-center flex-column ">
-        <h1 className="fw-bold title">Welcome to  Recipe Cooker </h1>
-        <p className="fst-italic text-info">I am in the pressure cooker of life <br />
+      <div className=" margin text-white d-flex justify-content-center align-items-center flex-column ">
+        <h1 className="fw-bold title mx-auto fs-sm-5">Welcome to  Recipe Cooker </h1>
+        <p className="fst-italic text-info ">I am in the pressure cooker of life <br />
 Can you please turn the flame down <br />
 I am cooking <br />
 Ready to blow up <br />
@@ -36,17 +37,11 @@ Please! <br /></p>
         <Button>Cooke Now</Button>
       </div>
 
-      {/* Banner image */}
-      <div>
-      <img className=" position-relative "
-          src=""
-          alt=""
-        />
-      </div>
+      
 
     
-    </Container>  <Container fluid className=" ps-5 ">
-    <h1 className="text-canter p-2 shadow-lg rounded-2  mt-5 chef-color">Welcome To Chef</h1>
+    </Container>  <Container  className=" ">
+    <h1 className="text-canter  shadow-lg rounded-2  mt-5 chef-color">Welcome To Chef</h1>
        
      <div className="row">
      {

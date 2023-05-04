@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import './SingleChefDetails.css'
@@ -27,17 +27,17 @@ const SingleChefDetails = ({ data }) => {
     setShow(false);
   };
   return (
-    <div className="col-lg-6">
+    <div className="col-lg-6 position-relative">
       {/* <h1>this is SingleChefDetails page :{data.length}</h1> */}
 
-      <div className="card mb-3 col-lg mx-auto   ">
+      <Card className="mb-3 col-lg height  ">
         <card-title>{recipe_name}</card-title>
         <img src={recipe_image} className="card-img-top img-fluid details-image" alt="..." />
         <div className="card-body">
-          <h5 className="card-title fa-xl fw-bold">{recipe_name}</h5>
-          <h6>
+          <h5 className="card-title fa-xl fw-bold mb-2">{recipe_name}</h5>
+          <h6 className="">
             {" "}
-            <span className="fw-bold text-info">Ingredients </span>:{" "}
+            <span className="mb-2 fw-bold text-info">Ingredients </span>:{" "}
             {ingredients}
           </h6>
               <p className="card-text text-secondary  fst-italic">
@@ -51,11 +51,11 @@ const SingleChefDetails = ({ data }) => {
             </small>
           </p>
 
-          {show && (
-            <Button onClick={handlebtn}>
+         <Card.Body> {show && (
+            <button className="btn btn-outline-info favouriteBtn" onClick={handlebtn}>
               Favourite <ToastContainer position="top-center"></ToastContainer>
-            </Button>
-          )}
+            </button>
+          )}</Card.Body>
           {/* <Button variant="light" className="btn-bg-success"
             //   onClick={() => notify}
             onClick={() => setShow(!show)}
@@ -65,7 +65,7 @@ const SingleChefDetails = ({ data }) => {
           </Button> */}
           {/* <Button onClick={handlebtn}>notify! </Button> */}
         </div>
-      </div>
+      </Card>
     </div>
   );
 };

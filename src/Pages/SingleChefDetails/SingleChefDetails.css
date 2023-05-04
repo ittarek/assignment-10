@@ -1,2 +1,12 @@
-.details-image{         height: 200px;
+.details-image {
+  height:300px;
+}
+.height{
+          /* height:800px; */
+}
+
+.favouriteBtn{
+      
+          /* margin-bottom: -50px !important; */
+          background-color:bisque;
 }

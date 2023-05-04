@@ -14,11 +14,11 @@ import { Button } from "react-bootstrap";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
-  const { createLogin, googleLogin, githubLogin } = useContext(AuthContext);
+  const { createLogin, githubLogin, googleLogin } = useContext(AuthContext);
   const [error, setError] = useState("");
 
-//   redirect to Chef details page
-const navigate = useNavigate()
+  //   redirect to Chef details page
+  const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
   //   login function
@@ -27,23 +27,25 @@ const navigate = useNavigate()
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
+    form.reset();
 
-    setError('')
-        if(email ,password){
-              setError("email and password not match")
-              return;
-    }
     //      login with email/password
-    createLogin(email, password)
-      .then((result) => {
-        const loggedUser = result.user;
-        console.log(loggedUser);
-        form.reset();
-        navigate(from ,{replace : true})
-      })
-      .catch((error) => {
-        setError(error.message);
-      });
+    // if ((!email, password)) {
+    //   setError("email and password does not match");
+    //   return;
+    // }
+    if ((email, password)) {
+      createLogin(email, password)
+        .then((result) => {
+          const loggedUser = result.user;
+          console.log(loggedUser);
+          form.reset();
+          navigate(from, { replace: true });
+        })
+        .catch((error) => {
+          setError(error.message);
+        });
+    }
 
     //     login with Google
   };
@@ -53,28 +55,33 @@ const navigate = useNavigate()
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
-        navigate(from ,{replace : true})
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         setError(error.message);
       });
   };
+
   // login with GitHub
   const handleGithubLogin = () => {
     githubLogin()
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
-        navigate(from ,{replace : true})
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         setError(error.message);
       });
   };
+
   return (
     <div className="wrapper mx-auto">
       <div className="form-box login">
-          <span className="icon-close"> <FaCross></FaCross></span>
+        <span className="icon-close">
+          {" "}
+          <FaCross></FaCross>
+        </span>
         <h2>Login</h2>
         <Form onSubmit={handleLogin} action="#">
           <div className="input-box">

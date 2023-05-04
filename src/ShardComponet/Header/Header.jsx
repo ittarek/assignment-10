@@ -11,6 +11,7 @@ import NavigationBar from "../NavigationBar/NavigationBar";
 import { Link, NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { Tooltip } from "react-bootstrap";
 
 const Header = () => {
   const { user, loggedOut } = useContext(AuthContext);
@@ -38,9 +39,9 @@ const Header = () => {
     <Navbar
       bg=""
       expand="lg"
-      className=" bg-transparent shadow-lg mb-5 position-relative"
+      className=" bg-transparent shadow-lg   position-relative"
     >
-      <Container className="d-flex  bg-transparent">
+      <Container className="d-flex position-sticky-top">
         <div className="rounded-lg">
           <img
             className="logo  m-auto   "
@@ -86,7 +87,7 @@ const Header = () => {
               Contact
             </NavLink>
 
-            {user ? (
+            {user?.email ? (
               <NavLink
                 onClick={handleLogOut}
                 style={navLinkStyle}
@@ -103,14 +104,15 @@ const Header = () => {
                 {" "}
                 Login
               </NavLink>
-            )}
+            )} 
          
             {
-              user && <span className="text-secondary ms-3 border-danger border-4 rounded-2">{user.displayName}</span>
+              user?.email && <span className="text-secondary ms-3 border-danger border-4 rounded-2">{user.displayName}</span>
             }
-            {/* {
-              user && <span className=" ms-3 border-danger border-4 rounded-2">{user.photoUR}</span>
-            } */}
+            {
+              user?.email && <span className=" ms-3   "> {<img className="round" src= {user.photoURL}alt={user.displayName} />}  </span>
+            } 
+    
           </Nav>
         </Navbar.Collapse>
       </Container>

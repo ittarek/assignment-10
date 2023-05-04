@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Carousel } from "react-bootstrap";
 import "./Branch.css";
 
 const Branch = () => {
+
+  // useEffect(()=>{
+  //   fetch('../../../public/data/data.json')
+  // },[])
   return (
     <div>
       <h1 className="text-center text-info fw-bold fst-italic">Our Branch</h1>

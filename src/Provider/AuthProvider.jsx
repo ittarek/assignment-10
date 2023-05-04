@@ -69,24 +69,21 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
 
-  // update profile
-  // useEffect(() => {
-  //   const updateUser = updateProfile(auth, (currentUser) => {
-  //     console.log("logged isn user inside auth state ", currentUser);
-  //     setPhotoUrl(currentUser);
-  //     setLoader(false);
-  //   });
-  //   // return () => {
-  //   //   updateUser();
-  //   // };
-  // }, []);
-  const updateUser = () => {
-    return updateProfile(auth, (loggedUser) => {
-      displayName: "Jane Q. User"
-       photoURL: "https://example.com/jane-q-user/profile.jpg"
 
-    });
-  };
+  const updateUser = (user, name,photoUrl) => {
+    updateProfile(user, {
+        displayName: name,
+        photoURL : photoUrl
+    })
+        .then(() => {
+            console.log('user name and photo updated')
+        })
+        .catch(error => {
+            setError(error.message);
+        })
+}
+
+
 
   const authInfo = {
     user,

@@ -11,7 +11,7 @@ const ChefDetails = () => {
 
   return (
   <>
-      <Container fluid className="d-flex mx-auto w-75 flex-column-reverse shadow-sm mb-5 mt-5">
+      <Container  className="d-flex mx-auto w-75 flex-column-reverse  mb-5 mt-5">
         {details.slice(0, 1).map((chef) => (
           <ChefBanner key={chef.id} chef={chef}></ChefBanner>
         ))}
