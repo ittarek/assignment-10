@@ -11,6 +11,7 @@ import ErrorPage from "../../Pages/Errorpage/ErrorPage";
 import PrivetRout from "./../PrivetRoute/PrivetRoute";
 import Destination from "../../Pages/Destination/Destination";
 import Contact from "../../Pages/Contact/Contact";
+// import MyDocument from "../../Pages/MyDocument ";
 const LazyHome = React.lazy(() => import("../../Pages/HomePage/Home"));
 
 const LazyChefDetails = React.lazy(() =>
@@ -50,6 +51,10 @@ export const router = createBrowserRouter([
         path: "/contact",
         element: <Contact></Contact>,
       },
+    //   {
+    //  path: '/pdfTest',
+    //  element:<MyDocument></MyDocument> ,
+    //   },
       {
         path: "/chefDetails/:id",
         element: (

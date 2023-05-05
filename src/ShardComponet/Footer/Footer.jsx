@@ -1,40 +1,84 @@
 import React from "react";
-import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
-import './Footer.css'
+import { FaFacebook, FaInstagram, FaShoePrints, FaTwitter } from "react-icons/fa";
+import "./Footer.css";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className=" mt-5 bg-secondary px-5 container-fluid mx-auto">
-      <div className="margin d-lg-flex justify-content-between my-auto align-items-center">
-        {/* contact information */}
-        <div className="w-75 ">
-          <h2>Contact Us</h2>
-          <ul>
-            <li className="text-white">
-              Email <p>Ittarek551@gmail.com</p>{" "}
-            </li>
-            <li className="text-white">
-              Phone <p>0185600015</p>
-            </li>
-          </ul>
-        </div>
-
-        {/* social information */}
-        <div>
-          <h2>Our Social Activity</h2>
-          <ul className="list-style-none">
-            <li className="text-white ">Facebook <FaFacebook className="text-success"></FaFacebook> </li>
-            <li className="text-white">Instagram <FaInstagram></FaInstagram></li>
-            <li className="text-white">Tweeter <FaTwitter></FaTwitter></li>
-          </ul>
+    <footer className="main-footer dark">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-3 mb-30">
+            <div className="item abot">
+              <div className="logo mb-20">
+                <h2>
+                  <Link to="index.html">Cooker</Link>
+                  <span>Cooker</span>
+                </h2>
+              </div>
+              <p>
+                Steakhouse the nunc bibe endum in finibus elit the solli citudin
+                elit.
+              </p>
+              <div className="social-icon">
+                <Link className=" " to="#">
+                  <span className=""><FaFacebook className="link"></FaFacebook></span>
+                </Link>
+                <Link to="#">
+                  <span className=""><FaTwitter className="link"></FaTwitter></span> </Link>
+             
+                <Link to="#">
+              <span> <FaInstagram className="link"></FaInstagram> </span>   </Link>
+              
+                <Link to="#">
+            <span className="">     <FaShoePrints className="link"></FaShoePrints></span> </Link>
+             
+              </div>
+            </div>
+          </div>
+          <div className="col-md-2 offset-md-1 mb-30">
+            <div className="item fotcont">
+              <div className="fothead">
+                <h6>Phone &amp; Email</h6>
+              </div>
+              <p>+01245760</p>
+              <p>ittarek551@gmail.com</p>
+            </div>
+          </div>
+          <div className="col-md-2 offset-md-1 mb-30">
+            <div className="item fotcont">
+              <div className="fothead">
+                <h6>Our Address</h6>
+              </div>
+              <p>24 road D block, Chottogram, Bangladesh</p>
+            </div>
+          </div>
+          <div className="col-md-2 offset-md-1 mb-30">
+            <div className="item fotcont">
+              <div className="fothead">
+                <h6>Opening Hours</h6>
+              </div>
+              <p>Mon-Fri: 5 PM - 10:30 PM Sunday: Closed</p>
+            </div>
+          </div>
         </div>
       </div>
-
-
-<div className="text-center mb-1">
- © 2023 Cooker Inc. All rights reserved.
-</div>
- 
+      <div className="sub-footer">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-8">
+              <div className="text-left">
+                <p>© 2023, Cooker . All right reserved.</p>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <p className="right">
+                <Link to="#">Terms &amp; Conditions</Link>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
   );
 };

@@ -1,32 +1,26 @@
 import React from "react";
-import { Button, Card, Table } from "react-bootstrap";
-import ReactDOM from "react-dom";
-import Pdf from "react-to-pdf";
+import { Button, Card, Container, Table } from "react-bootstrap";
+import "./Blog.css";
+import ReactPdf from "../reactToPdf/ReactPdf";
 
-// import "./styles.css";
-const ref = React.createRef();
+
+
+
+
+
+
 
 const Blog = () => {
   return (
-    <div>
+    <Container>
 
-<Pdf targetRef={ref} filename="code-example.pdf">
-        {({ toPdf }) => <button onClick={toPdf}>Generate Pdf</button>}
-      </Pdf>
-      <div ref={ref}>
-        <h1>Hello CodeSandbox</h1>
-        <h2>Start editing to see some magic happen!</h2>
-      </div>
-
-
-
-
+      <ReactPdf></ReactPdf>
 
 
 
 
       {/* 1 */}
-      <Card className="m-5">
+      <Card className="m-5 card-margin">
         <Card.Body>
           <Card.Title>
             {" "}
@@ -122,7 +116,7 @@ const Blog = () => {
           </Card.Text>
         </Card.Body>
       </Card>
-    </div>
+    </Container>
   );
 };
 

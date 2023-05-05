@@ -1,7 +1,9 @@
-* {
-  font-family: "Poppins", sans-serif;
-}
 
+*{
+  *{
+    font-family: 'Pirata One', cursive;
+}
+}
 .image {
   height: 100vh;
   background-color: hsla(0, 0%, 0%, 0.6);
@@ -19,10 +21,10 @@ backdrop-filter: blue;
  
 }
 .margin {
-  margin-top: 100px;
+ 
   margin-left: px;
   /* margin-top:5px; */
-  padding-top: 10px;
+  padding-top: 50px;
 }
 .see-all-button {
   margin-left: 490px;

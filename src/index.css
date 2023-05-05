@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
-
+/* ======= Google fonts ======= */
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600;700&family=Pirata+One&display=swap");
 :root{
   font-family: 'Poppins', sans-serif;
 }

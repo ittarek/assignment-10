@@ -6,13 +6,12 @@ const ShowMenu = ({ data }) => {
   const { id, name, description, price, calories, ingredients, image } = data;
   return (
     <div className="col-lg-6 gap-2 mx-auto menu-img rounded-circle">
-      <Card
-        className="mb-4 shadow-lg mx-auto " 
-        style={{ width: "18rem" }}
-      >
-    <div className=" item animate-box" fadeInUp animated="fadeInUp">    <Card.Img className="today-image "  src={image}  /></div>
-    
-      
+      <Card className="mb-4 shadow-lg mx-auto " style={{ width: "18rem" }}>
+        <div className=" item animate-box" fadeInUp animated="fadeInUp">
+          {" "}
+          <Card.Img className="today-image " src={image} />
+        </div>
+
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Text>{description}</Card.Text>
